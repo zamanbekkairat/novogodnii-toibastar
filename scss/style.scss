@@ -10,6 +10,7 @@
 body {
     font-family: 'Inter', sans-serif;
     @include mr-pd;
+    overflow-x: hidden;
 }
 
 @import "container.scss";
