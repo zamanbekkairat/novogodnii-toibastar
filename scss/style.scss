@@ -7,6 +7,11 @@
     display: flex
 }
 
+body {
+    font-family: 'Inter', sans-serif;
+    @include mr-pd;
+}
+
 @import "container.scss";
 .out-of-header {
     background: linear-gradient(159.74deg, #25378C 7.34%, #001B75 39.58%);
