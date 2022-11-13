@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новогодний Тойбастар</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main class="out-of-header">
+        <div class="ellipse e-1"></div>
+        <div class="ellipse e-2"></div>
+
+        <div class="container">
+            <section class="welcome">
+                <div class="visual">
+                    <picture>
+                        <source media="(min-width: 1024px)" srcset="img/visual-desk.png" srcset="img/visual-desk-2x.png 2x">
+                        <img src="img/visual-mob.png" srcset="img/visual-mob-2x.png 2x" alt="visual">
+                    </picture>
+                </div>
+
+                <div class="welcome-text">
+                    <h1>Новогодний Тойбастар</h1>
+                    <p>
+                        Новогодние подарки от&nbsp;TeleBingo
+                        <br>В преддверии Нового&nbsp;Года, TeleBingo разыгрыет <b>115&nbsp;денежных призов</b> на&nbsp;сумму <b>20&nbsp;000&nbsp;000₸</b>
+                    </p>
+
+                    <a href="javascript:void(0)" class="landing-btn js-scroll-btn">Подробнее</a>
+                </div>
+            </section>
+
+            <div class="landing js-content" data-current-tab="online">
+                <div class="terms">
+                    <div class="terms-text">
+                        <section>
+                            <nav class="tabs-wrapper">
+                                <ul class="landing-tabs">
+                                    <li class="landing-tabs__item active js-tab-parent tab-online">
+                                        <a href="javascript:void(0)" class="js-tab" data-goto="online">Онлайн-билет</a>
+                                    </li>
+                                    <li class="landing-tabs__item js-tab-parent">
+                                        <a href="javascript:void(0)" class="js-tab" data-goto="offline">Бумажный билет</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </section>
+
+                        <section class="terms-block">
+                            <h2>Как принять участие?</h2>
+                            <ul class="terms-list" data-current-tab="online">
+                                <li class="terms-list__item" data-tab="online">
+                                    <img src="img/ticket.svg" alt="ticket">
+                                    <p>Приобрести 5 билетов TeleBingo или ЛотоНабор “Квартира” на сайте sz.kz</p>
+                                </li>
+                                <li class="terms-list__item" data-tab="offline">
+                                    <img src="img/ticket.svg" alt="ticket">
+                                    <p>Приобрести 5 билетов TeleBingo или ЛотоНабор “Квартира” на сайте sz.kz</p>
+                                </li>
+                                <li class="terms-list__item" data-tab="offline">
+                                    <img src="img/phone.svg" alt="phone">
+                                    <p>Зарегистрировать билет на розыгрыш квартиры, на терминале или на сайте sz.kz</p>
+                                </li>
+                                <li class="terms-list__item">
+                                    <img src="img/camera.svg" alt="camera">
+                                    <p>Следить за розыгрышами в прямом эфире YouTube канала <a href="https://www.youtube.com/c/sattyzhuldyz">Satty&nbsp;Zhuldyz</a></p>
+                                </li>
+                            </ul>
+
+                            <a href="https://sz.kz/game?gameid=11&ispack=true" class="landing-btn" data-tab="online">Участвовать</a>
+                        </section>
+                    </div>
+
+                    <div class="terms-img">
+                        <img src="img/boxes-desk.png" srcset="img/boxes-desk-2x.png 2x" alt="">
+                    </div>
+                </div>
+
+                <section class="maps" data-tab="offline">
+                    <div class="maps-text">
+
+                        <h3>Где купить билет?</h3>
+                        <p>
+                            Купить бумажные билеты лотереи вы&nbsp;можете в&nbsp;точках продаж. С картой расположения наших точек продаж можно ознакомиться на специальной странице.
+                        </p>
+                        <a href="https://sz.kz/gde-kupit-lotereyu" class="landing-btn">Карта точек продаж </a>
+                    </div>
+                </section>
+
+                <section class="form" data-tab="offline">
+                    <iframe allowtransparency="true" class="regis" width="100%" frameborder="0" src="https://www.szhuldyz.kz/forms/nt-check/" scrolling="no"></iframe>
+
+                    <script>
+                        function gotResizeMessage(event) {
+                            console.log("got resize message: " + JSON.stringify(event.data))
+
+                            var matches = document.querySelectorAll('iframe'); // iterate through all iFrames on page
+                            for (i = 0; i < matches.length; i++) {
+                                if (matches[i].contentWindow == event.source)
+                                // found the iFrame that sent us a message
+                                {
+                                    console.log("found iframe that sent a message: " + matches[i].src)
+
+                                    //matches[i].width = Number( event.data.width )	 <--- we do not do anything with the page width for now
+                                    matches[i].height = Number(event.data.height)
+
+                                    return 1;
+                                }
+                            }
+                        }
+
+                        document.addEventListener("DOMContentLoaded", function() {
+
+                            window.addEventListener("message", gotResizeMessage, false)
+
+                        }); //on DOM ready
+                    </script>
+                </section>
+
+                <section class="boxes">
+                    <img src="img/boxes.png" srcset="img/boxes-2x.png 2x" alt="">
+                </section>
+
+                <section class="days">
+                    <div class="mobile">
+                        <h2>Даты розыгрышей</h2>
+
+                        <div class="days-blocks">
+                            <div class="accordion">
+                                <div class="accordion__text">
+                                    <h5>
+                                        <span>20</span> ноября
+                                    </h5>
+
+                                    <h4>будет разыгрыно 15&nbsp;<span>призов по</span>&nbsp;100&nbsp;000₸</h4>
+                                </div>
+                                <div class="accordion__body">
+                                    <p>участвуют билеты, приобретенные и&nbsp;зарегистрированные с&nbsp;13.11.2022&nbsp;09:00&nbsp;по&nbsp;19.11.2022&nbsp;23:59
+                                    </p>
+                                    <div class="lists-bloсk">
+                                        <a href="#" target="_blank">
+                                            <p class="icon"><img src="img/download.svg" alt=""></p>
+                                            <p class="text">Список участников</p>
+                                        </a>
+
+                                        <a href="#" target="_blank">
+                                            <p class="icon"><img src="img/download.svg" alt=""></p>
+                                            <p class="text">Победители</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion">
+                                <div class="accordion__text">
+                                    <h5>
+                                        <span>27</span> ноября
+                                    </h5>
+
+                                    <h4>будет разыгрыно 15&nbsp;<span>призов по</span>&nbsp;100&nbsp;000₸</h4>
+                                </div>
+                                <div class="accordion__body">
+                                    <p>участвуют билеты, приобретенные и&nbsp;зарегистрированные с&nbsp;20.11.2022&nbsp;00:00&nbsp;по&nbsp;26.11.2022&nbsp;23:59
+                                    </p>
+                                    <div class="lists-bloсk">
+                                        <a href="#" target="_blank">
+                                            <p class="icon"><img src="img/download.svg" alt=""></p>
+                                            <p class="text">Список участников</p>
+                                        </a>
+
+                                        <a href="#" target="_blank">
+                                            <p class="icon"><img src="img/download.svg" alt=""></p>
+                                            <p class="text">Победители</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion">
+                                <div class="accordion__text">
+                                    <h5>
+                                        <span>4</span> декабря
+                                    </h5>
+
+                                    <h4>будет разыгрыно 15&nbsp;<span>призов по</span>&nbsp;100&nbsp;000₸</h4>
+                                </div>
+                                <div class="accordion__body">
+                                    <p>участвуют билеты, приобретенные и&nbsp;зарегистрированные с&nbsp;27.11.2022&nbsp;00:00&nbsp;по&nbsp;03.12.2022&nbsp;23:59
+                                    </p>
+                                    <div class="lists-bloсk">
+                                        <a href="#" target="_blank">
+                                            <p class="icon"><img src="img/download.svg" alt=""></p>
+                                            <p class="text">Список участников</p>
+                                        </a>
+
+                                        <a href="#" target="_blank">
+                                            <p class="icon"><img src="img/download.svg" alt=""></p>
+                                            <p class="text">Победители</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion">
+                                <div class="accordion__text">
+                                    <h5>
+                                        <span>11</span> декабря
+                                    </h5>
+
+                                    <h4>будет разыгрыно 15&nbsp;<span>призов по</span>&nbsp;100&nbsp;000₸</h4>
+                                </div>
+                                <div class="accordion__body">
+                                    <p>участвуют билеты, приобретенные и&nbsp;зарегистрированные с&nbsp;04.12.2022&nbsp;00:00&nbsp;по&nbsp;10.12.2022&nbsp;23:59
+                                    </p>
+                                    <div class="lists-bloсk">
+                                        <a href="#" target="_blank">
+                                            <p class="icon"><img src="/img/download.svg" alt=""></p>
+                                            <p class="text">Список участников</p>
+                                        </a>
+
+                                        <a href="#" target="_blank">
+                                            <p class="icon"><img src="/img/download.svg" alt=""></p>
+                                            <p class="text">Победители</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion">
+                                <div class="accordion__text">
+                                    <h5>
+                                        <span>18</span> декабря
+                                    </h5>
+
+                                    <h4>будет разыгрыно 15&nbsp;<span>призов по</span>&nbsp;100&nbsp;000₸</h4>
+                                </div>
+                                <div class="accordion__body">
+                                    <p>участвуют билеты, приобретенные и&nbsp;зарегистрированные с&nbsp;11.12.2022&nbsp;00:00&nbsp;по&nbsp;17.12.2022&nbsp;23:59
+                                    </p>
+                                    <div class="lists-bloсk">
+                                        <a href="#" target="_blank">
+                                            <p class="icon"><img src="/img/download.svg" alt=""></p>
+                                            <p class="text">Список участников</p>
+                                        </a>
+
+                                        <a href="#" target="_blank">
+                                            <p class="icon"><img src="/img/download.svg" alt=""></p>
+                                            <p class="text">Победители</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion">
+                                <div class="accordion__text">
+                                    <h5>
+                                        <span>25</span> декабря
+                                    </h5>
+
+                                    <div>
+                                        <h4>будет разыгрыно</h4>
+                                        <div class="h4-block">
+                                            <h4>15&nbsp;<span>призов по</span>&nbsp;200&nbsp;000₸</h4>
+                                            <h4>10&nbsp;<span>призов по</span>&nbsp;300&nbsp;000₸</h4>
+                                            <h4>10&nbsp;<span>призов по</span>&nbsp;400&nbsp;000₸</h4>
+                                            <h4>5&nbsp;<span>призов по</span>&nbsp;500&nbsp;000₸</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion__body">
+                                    <p>участвуют билеты, приобретенные и&nbsp;зарегистрированные с&nbsp;13.11.2022&nbsp;09:00&nbsp;по&nbsp;24.12.2022&nbsp;23:59
+                                    </p>
+                                    <div class="lists-bloсk">
+                                        <a href="#" target="_blank">
+                                            <p class="icon"><img src="/img/download.svg" alt=""></p>
+                                            <p class="text">Список участников</p>
+                                        </a>
+
+                                        <a href="#" target="_blank">
+                                            <p class="icon"><img src="/img/download.svg" alt=""></p>
+                                            <p class="text">Победители</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/game?gameid=23&ispack=true" class="landing-btn">Купить билет онлайн</a>
+                    </div>
+
+                    <div class="desktop">
+                        <div class="days-text">
+                            <h2>Даты розыгрышей</h2>
+
+                            <div class="days-blocks">
+                                <div class="days-block">
+                                    <h5>
+                                        <span>20</span> ноября
+                                    </h5>
+
+                                    <div class="days-block__text">
+                                        <h4>будет разыграно 15 призов по 100&nbsp;000₸</h4>
+                                        <p>участвуют билеты, приобретенные и&nbsp;зарегистрированные с&nbsp;13.11.2022&nbsp;9:00&nbsp;по&nbsp;19.11.2022 23:59</p>
+
+                                        <div class="lists-bloсk">
+                                            <a href="#" target="_blank">
+                                                <p class="icon"><img src="/img/download.svg" alt=""></p>
+                                                <p class="text">Список участников</p>
+                                            </a>
+
+                                            <a href="#" target="_blank">
+                                                <p class="icon"><img src="/img/download.svg" alt=""></p>
+                                                <p class="text">Победители</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="days-block">
+                                    <h5>
+                                        <span>27</span> ноября
+                                    </h5>
+
+                                    <div class="days-block__text">
+                                        <h4>будет разыграно 15 призов по 100&nbsp;000₸</h4>
+                                        <p>участвуют билеты, приобретенные и&nbsp;зарегистрированные с&nbsp;20.11.2022&nbsp;9:00&nbsp;по&nbsp;26.11.2022 23:59</p>
+
+                                        <div class="lists-bloсk">
+                                            <a href="#" target="_blank">
+                                                <p class="icon"><img src="/img/download.svg" alt=""></p>
+                                                <p class="text">Список участников</p>
+                                            </a>
+
+                                            <a href="#" target="_blank">
+                                                <p class="icon"><img src="/img/download.svg" alt=""></p>
+                                                <p class="text">Победители</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="days-block">
+                                    <h5>
+                                        <span>4</span> декабря
+                                    </h5>
+
+                                    <div class="days-block__text">
+                                        <h4>будет разыграно 15 призов по 100&nbsp;000₸</h4>
+                                        <p>участвуют билеты, приобретенные и&nbsp;зарегистрированные с&nbsp;27.11.2022&nbsp;9:00&nbsp;по&nbsp;03.12.2022 23:59</p>
+
+                                        <div class="lists-bloсk">
+                                            <a href="#" target="_blank">
+                                                <p class="icon"><img src="/img/download.svg" alt=""></p>
+                                                <p class="text">Список участников</p>
+                                            </a>
+
+                                            <a href="#" target="_blank">
+                                                <p class="icon"><img src="/img/download.svg" alt=""></p>
+                                                <p class="text">Победители</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="days-block">
+                                    <h5>
+                                        <span>11</span> декабря
+                                    </h5>
+
+                                    <div class="days-block__text">
+                                        <h4>будет разыграно 15 призов по 100&nbsp;000₸</h4>
+                                        <p>участвуют билеты, приобретенные и&nbsp;зарегистрированные с&nbsp;04.12.2022&nbsp;9:00&nbsp;по&nbsp;10.12.2022 23:59</p>
+
+                                        <div class="lists-bloсk">
+                                            <a href="#" target="_blank">
+                                                <p class="icon"><img src="/img/download.svg" alt=""></p>
+                                                <p class="text">Список участников</p>
+                                            </a>
+
+                                            <a href="#" target="_blank">
+                                                <p class="icon"><img src="/img/download.svg" alt=""></p>
+                                                <p class="text">Победители</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="days-block">
+                                    <h5>
+                                        <span>18</span> декабря
+                                    </h5>
+
+                                    <div class="days-block__text">
+                                        <h4>будет разыграно 15 призов по 100&nbsp;000₸</h4>
+                                        <p>участвуют билеты, приобретенные и&nbsp;зарегистрированные с&nbsp;11.12.2022&nbsp;9:00&nbsp;по&nbsp;17.12.2022 23:59</p>
+
+                                        <div class="lists-bloсk">
+                                            <a href="#" target="_blank">
+                                                <p class="icon"><img src="/img/download.svg" alt=""></p>
+                                                <p class="text">Список участников</p>
+                                            </a>
+
+                                            <a href="#" target="_blank">
+                                                <p class="icon"><img src="/img/download.svg" alt=""></p>
+                                                <p class="text">Победители</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="days-block">
+                                    <h5>
+                                        <span>25</span> декабря
+                                    </h5>
+
+                                    <div class="days-block__text">
+                                        <h4>будет разыграно</h4>
+                                        <h4>
+                                            <ul>
+                                                <li>15 призов по 200&nbsp;000₸</li>
+                                                <li>10 призов по 300&nbsp;000₸</li>
+                                                <li>10 призов по 400&nbsp;000₸</li>
+                                                <li>5 призов по 500&nbsp;000₸</li>
+                                            </ul>
+                                        </h4>
+                                        <p>участвуют билеты, приобретенные и&nbsp;зарегистрированные с&nbsp;13.11.2022&nbsp;9:00&nbsp;по&nbsp;19.11.2022 23:59</p>
+
+                                        <div class="lists-bloсk">
+                                            <a href="#" target="_blank">
+                                                <p class="icon"><img src="/img/download.svg" alt=""></p>
+                                                <p class="text">Список участников</p>
+                                            </a>
+
+                                            <a href="#" target="_blank">
+                                                <p class="icon"><img src="/img/download.svg" alt=""></p>
+                                                <p class="text">Победители</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href="/game?gameid=23&ispack=true" class="landing-btn">Купить билет онлайн</a>
+                        </div>
+                    </div>
+
+                    <div class="days-img">
+                        <picture>
+                            <source media="(min-width: 1024px)" srcset="img/days-desk.png" srcset="img/days-desk-2x.png 2x">
+                            <img src="/img/days-img.png" srcset="/img/days-img-2x.png 2x" alt="">
+                        </picture>
+                    </div>
+                </section>
+
+                <section class="important">
+                    <div class="important-block">
+                        <div class="icon">
+                            <img srcset="https://static.sz.kz/landings/649-redmi/img/exclamatory-2x.png 2x" alt="">
+                        </div>
+                        <p class="text">Ответственность за&nbsp;правильность внесения номера билета на&nbsp;сайте, а&nbsp;также сохранность оригинала лотерейного билета несет участник акции.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="faq">
+                    <h3>Часто задаваемые вопросы:</h3>
+                    <div class="accordion">
+                        <p class="accordion__text">Получение выигрыша:</p>
+                        <div class="accordion__body">
+                            <p>
+                                Для получения выигрыша позвоните в контакт-центр по номеру <a href="tel:+78000805200">8&nbsp;800&nbsp;080&nbsp;52&nbsp;00</a> или обратитесь в&nbsp;представительство АО&nbsp;Сәтті&nbsp;Жұлдыз вашего региона.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="accordion">
+                        <p class="accordion__text">Оффлайн игрокам необходимо предоставить:</p>
+                        <div class="accordion__body">
+                            <p>
+                                <ul>
+                                    <li>Оригинал бумажного билета</li>
+                                    <li>Удостоверение личности</li>
+                                    <li>Заполнить необходимые документы для получения выигрыша</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="accordion">
+                        <p class="accordion__text">Онлайн игрокам необходимо предоставить:</p>
+                        <div class="accordion__body">
+                            <p>
+                                <ul>
+                                    <li>СМС КОД;</li>
+                                    <li>Удостоверение личности</li>
+                                    <li>Заполнить необходимые документы для получения выигрыша</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="responsibility">
+                    <p>
+                        СОЦИАЛЬНАЯ ОТВЕТСТВЕННОСТЬ: 15%&nbsp;от&nbsp;операционного игрового дохода перечисляется на развитие отечественного спорта.
+                        <br>
+                        <br> © 2017-2022 АО «Сәтті Жұлдыз» Все права защищены.
+
+                    </p>
+                </section>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://static.sz.kz/landings/alladin-iframe/js/iframeResizer.min.js"></script>
+    <script src="https://static.sz.kz/landings/alladin-iframe/js/main.js"></script>
+    <script src="js/main.js" defer></script>
+</body>
+
+</html>
